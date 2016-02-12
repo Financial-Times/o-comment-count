@@ -44,7 +44,7 @@ const Widget = function (rootEl, config) {
 		}
 	}
 
-	let template = envConfig.template;
+	let template = envConfig.get('template');
 	if (config.template) {
 		template = config.template;
 	}
@@ -61,7 +61,7 @@ const Widget = function (rootEl, config) {
 	}
 
 	function getCommentCount (callback) {
-		oCommentApi.getCommentCount(config.articleId, function (err, count) {
+		oCommentApi.api.getCommentCount(config.articleId, function (err, count) {
 			if (err) {
 				callback(err);
 
@@ -77,10 +77,10 @@ const Widget = function (rootEl, config) {
 	function init () {
 		render();
 
-		if (config.autoRefresh && !refreshInitialized) {
+		if ((config.autoRefresh === true || config.autoRefresh === 'true') && !refreshInitialized) {
 			refreshInitialized = true;
 
-			setTimeout(function () {
+			setInterval(function () {
 				render();
 			}, 5 * 60 * 1000);
 		}

@@ -23,7 +23,7 @@ Use the following markup to enable comments:
 ```html
 <div data-o-component="o-comment-count" 
     data-o-comment-count-auto-init="true|false" 
-    data-o-comment-config-articleId="{article-id}"
+    data-o-comment-config-article-id="{article-id}"
     data-o-comment-config-template="{count} Comment{plural}">
 
         <div class="o--if-no-js">0 Comments</div>
@@ -31,7 +31,7 @@ Use the following markup to enable comments:
 ```
 
  
- * `data-o-comments-config-articleId` a unique id for your content, ideally a UUID for FT content
+ * `data-o-comments-config-article-id` a unique id for your content, ideally a UUID for FT content
  * `data-o-comments-auto-init="false"` a module which has this attribute with a `false` value will not be initialized on the `o.DOMContentLoaded` event. This allows you to defer component initialisation.
  * `data-o-comments-config-{key}` for any other configuration. `{key}` has the following rule: `--` means new object level, `-` means camel case. Example: `data-o-comments-config--data-format--absolute="value"` is transformed to: ```{"livefyre": {"dataFormat": {"absolute": "value"}}}```
 
