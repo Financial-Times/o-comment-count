@@ -23,22 +23,22 @@ Use the following markup to enable comments:
 ```html
 <div data-o-component="o-comment-count" 
     data-o-comment-count-auto-init="true|false" 
-    data-o-comment-config-article-id="{article-id}"
-    data-o-comment-config-template="{count} Comment{plural}">
+    data-o-comment-count-config-article-id="{article-id}"
+    data-o-comment-count-config-template="{count} Comment{plural}">
 
         <div class="o--if-no-js">0 Comments</div>
 </div>
 ```
 
  
- * `data-o-comments-config-article-id` a unique id for your content, ideally a UUID for FT content
- * `data-o-comments-auto-init="false"` a module which has this attribute with a `false` value will not be initialized on the `o.DOMContentLoaded` event. This allows you to defer component initialisation.
- * `data-o-comments-config-{key}` for any other configuration. `{key}` has the following rule: `--` means new object level, `-` means camel case. Example: `data-o-comments-config--data-format--absolute="value"` is transformed to: ```{"livefyre": {"dataFormat": {"absolute": "value"}}}```
+ * `data-o-comment-count-config-article-id` a unique id for your content, ideally a UUID for FT content
+ * `data-o-comment-count-auto-init="false"` a module which has this attribute with a `false` value will not be initialized on the `o.DOMContentLoaded` event. This allows you to defer component initialisation.
+ * `data-o-comment-count-config-{key}` for any other configuration. `{key}` has the following rule: `--` means new object level, `-` means camel case. Example: `data-o-comment-count-config--data-format--absolute="value"` is transformed to: ```{"livefyre": {"dataFormat": {"absolute": "value"}}}```
 
 For the full list of configuration, see the <a href="#config">available configurations</a>.
 
 
-Those elements which don't have the `data-o-comments-auto-init="false"` attribute will be automatically initialized on the `o.DOMContentReady` event.
+Those elements which don't have the `data-o-comment-count-auto-init="false"` attribute will be automatically initialized on the `o.DOMContentReady` event.
 
 If you defer initialising oCommentCount by using `data-o-comment-count-auto-init="false"` then you can initialise the component whenever you want by calling
 
