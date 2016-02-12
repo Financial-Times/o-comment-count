@@ -16,7 +16,7 @@ A small UI component for rendering the comment count of a given article.
  * <a href="#browser">Browser support</a>
  * <a href="#core">Core/enhanced experience</a>
 
-## <div id="product"></div> Adding comments to your product 
+## <div id="product"></div> Adding comment count to your product
 ### <div id="decl"></div> Declaratively 
 Use the following markup to enable comments:
 
