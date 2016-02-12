@@ -82,7 +82,7 @@ const Widget = function (rootEl, config) {
 
 			setInterval(function () {
 				render();
-			}, 5 * 60 * 1000);
+			}, 60 * 1000); // update every minute
 		}
 	}
 
