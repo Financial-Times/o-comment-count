@@ -1,0 +1,18 @@
+{
+	"description": "Renders the comment count for a given article.",
+	"origamiType": "module",
+	"origamiVersion": 1,
+	"support": "https://jira.ft.com/secure/RapidBoard.jspa?rapidView=57&view=detail",
+	"supportStatus": "active",
+	"ci": {},
+	"browserFeatures": {
+		"required": []
+	},
+	"demos": [
+		{
+			"path": "/demos/main.html",
+			"expanded": true,
+			"description": ""
+		}
+	]
+}
