@@ -1,5 +1,5 @@
 {
-  "name": "o-comments",
+  "name": "o-comment-count",
   "main": [
     "main.js"
   ],
