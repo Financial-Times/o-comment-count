@@ -10,9 +10,24 @@
 	},
 	"demos": [
 		{
-			"path": "/demos/main.html",
+			"path": "demos/main.html",
 			"expanded": true,
-			"description": ""
+			"description": "Basic setup"
+		},
+		{
+			"path": "demos/custom_template.html",
+			"expanded": true,
+			"description": "How to provide a custom template at an individual level"
+		},
+		{
+			"path": "demos/auto_refresh.html",
+			"expanded": true,
+			"description": "Enable auto refresh: interval of 1 minute"
+		},
+		{
+			"path": "demos/defer_init.html",
+			"expanded": true,
+			"description": "Initialize later"
 		}
 	]
 }
