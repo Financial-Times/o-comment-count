@@ -1,0 +1,24 @@
+{
+	"options": {
+		"js": "demos/src/demo.js",
+		"data": "demos/src/data.json"
+	},
+	"demos": [
+		{
+			"name": "main",
+			"template": "demos/src/main/demo.mustache"
+		},
+		{
+			"name": "custom_template",
+			"template": "demos/src/custom_template/demo.mustache"
+		},
+		{
+			"name": "auto_refresh",
+			"template": "demos/src/auto_refresh/demo.mustache"
+		},
+		{
+			"name": "defer_init",
+			"template": "demos/src/defer_init/demo.mustache"
+		}
+	]
+}
