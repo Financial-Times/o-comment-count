@@ -5,7 +5,7 @@
   ],
   "dependencies": {
     "o-comment-utilities": "^2.2.0",
-    "o-comment-api": "^2.3.0-beta.1"
+    "o-comment-api": "bjfletcher/o-comment-api#^2.3.1"
   },
   "ignore": [
     "node_modules",
