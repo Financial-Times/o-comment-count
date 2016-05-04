@@ -1,6 +1,6 @@
 const config = require('./src/javascripts/config.js');
 const oCommentApi = require('o-comment-api');
-const defaultConfig = require('./config.json');
+const defaultConfig = require('./config.js');
 const oCommentUtilities = require('o-comment-utilities');
 const Widget = require('./src/javascripts/Widget.js');
 
