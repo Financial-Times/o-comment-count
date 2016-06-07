@@ -77,6 +77,7 @@ The configuration object which is passed to the contructor can/should have the f
  - template: can be used if you want to override the global template for this widget. `{count}` will be replaced with the count, and `{plural}` will be replaced with blank for a count of 0 or 1, and with 's' for a count > 1.
  - autoInit: can be used to avoid initializing the widget automatically by setting this to false
  - autoRefresh: it refreshes the widget with the latest count if set to true
+ - hideIfZero: if true, hides the dom element of the widget (visibility: hidden)
 
 ## <div id="configuration"></div> Global configuration
 This module uses global configuration. These are related configurations for Livefyre.

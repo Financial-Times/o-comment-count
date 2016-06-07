@@ -56,7 +56,13 @@ const Widget = function (rootEl, config) {
 				return;
 			}
 
-			widgetEl.innerHTML = template.replace('{count}', count).replace('{plural}', (count > 1 ? 's' : ''));
+			console.log(config.articleId, config);
+			if (count === 0 && config.hideIfZero) {
+				widgetEl.style.visibility = 'hidden';
+			} else {
+				widgetEl.style.visibility = 'visible';
+				widgetEl.innerHTML = template.replace('{count}', count).replace('{plural}', (count > 1 ? 's' : ''));
+			}
 		});
 	}
 
