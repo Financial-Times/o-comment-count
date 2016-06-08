@@ -57,7 +57,7 @@ const Widget = function (rootEl, config) {
 			}
 
 			console.log(config.articleId, config);
-			if (count === 0 && config.hideIfZero) {
+			if (count === 0 && config.hideIfZero === true) {
 				widgetEl.style.visibility = 'hidden';
 			} else {
 				widgetEl.style.visibility = 'visible';
