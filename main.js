@@ -3,6 +3,7 @@ const oCommentApi = require('o-comment-api');
 const defaultConfig = require('./config.js');
 const oCommentUtilities = require('o-comment-utilities');
 const Widget = require('./src/javascripts/Widget.js');
+const domConstruct = require('./src/javascripts/domConstruct');
 
 /**
  * Default config (prod) is set.
@@ -33,7 +34,7 @@ module.exports.setConfig = function () {
 };
 
 module.exports.init = function (el) {
-	return oCommentUtilities.initDomConstruct({
+	return domConstruct({
 		context: el,
 		classNamespace: 'o-comment-count',
 		eventNamespace: 'oCommentCount',
@@ -80,7 +81,7 @@ document.addEventListener('o.DOMContentLoaded', function () {
 		oCommentUtilities.logger.log('Invalid config in the DOM.', e);
 	}
 
-	oCommentUtilities.initDomConstruct({
+	domConstruct({
 		classNamespace: 'o-comment-count',
 		eventNamespace: 'oCommentCount',
 		module: module.exports,

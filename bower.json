@@ -4,8 +4,8 @@
     "main.js"
   ],
   "dependencies": {
-    "o-comment-utilities": "^2.3.0-beta.8",
-    "o-comment-api": "^2.3.0"
+    "o-comment-utilities": "^2.3.0",
+    "o-comment-api": "^2.4.0-beta.1"
   },
   "ignore": [
     "node_modules",

@@ -4,6 +4,7 @@ const oCommentApi = require('o-comment-api');
 
 const Widget = function (rootEl, config) {
 	let widgetEl;
+	let commentCount;
 
 	try {
 		if (!rootEl) {
@@ -49,6 +50,9 @@ const Widget = function (rootEl, config) {
 		template = config.template;
 	}
 
+	if (config.count) {
+		commentCount = config.count;
+	}
 
 	function render () {
 		getCommentCount(function (err, count) {
@@ -66,29 +70,25 @@ const Widget = function (rootEl, config) {
 	}
 
 	function getCommentCount (callback) {
-		oCommentApi.api.getCommentCount(config.articleId, function (err, count) {
-			if (err) {
-				callback(err);
+		if (commentCount) {
+			callback(null, commentCount);
+		} else {
+			oCommentApi.api.getCommentCount(config.articleId, function (err, count) {
+				if (err) {
+					callback(err);
 
-				oCommentUtilities.logger.error('Error fetching the comment count', err);
-				return;
-			}
+					oCommentUtilities.logger.error('Error fetching the comment count', err);
+					return;
+				}
 
-			callback(null, count);
-		});
+				commentCount = count;
+				callback(null, commentCount);
+			});
+		}
 	}
 
-	let refreshInitialized = false;
 	function init () {
 		render();
-
-		if ((config.autoRefresh === true || config.autoRefresh === 'true') && !refreshInitialized) {
-			refreshInitialized = true;
-
-			setInterval(function () {
-				render();
-			}, 60 * 1000); // update every minute
-		}
 	}
 
 	if (config.autoInit !== false) {
