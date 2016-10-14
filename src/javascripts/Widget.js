@@ -50,7 +50,7 @@ const Widget = function (rootEl, config) {
 		template = config.template;
 	}
 
-	if (config.count) {
+	if (config.count >= 0) {
 		commentCount = config.count;
 	}
 
@@ -70,7 +70,7 @@ const Widget = function (rootEl, config) {
 	}
 
 	function getCommentCount (callback) {
-		if (commentCount) {
+		if (commentCount >= 0) {
 			callback(null, commentCount);
 		} else {
 			oCommentApi.api.getCommentCount(config.articleId, function (err, count) {

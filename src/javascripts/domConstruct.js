@@ -111,7 +111,7 @@ module.exports = function (config) {
 		widgetsToInitialize.forEach(item => {
 			const articleId = item.widgetConfig.articleId || item.widgetConfig.articleid || null;
 
-			if (counts[articleId]) {
+			if (counts.indexOf(articleId) !== -1) {
 				item.widgetConfig.count = counts[articleId];
 			}
 
