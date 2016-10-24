@@ -103,29 +103,31 @@ module.exports = function (config) {
 		}
 	}
 
-	oCommentApi.api.getCommentCounts(articleIds, function (err, counts) {
-		if (err) {
-			return;
-		}
-
-		widgetsToInitialize.forEach(item => {
-			const articleId = item.widgetConfig.articleId || item.widgetConfig.articleid || null;
-
-			if (counts[articleId] >= 0) {
-				item.widgetConfig.count = counts[articleId];
+	if (articleIds && articleIds.length) {
+		oCommentApi.api.getCommentCounts(articleIds, function (err, counts) {
+			if (err || !counts) {
+				return;
 			}
 
-			/* eslint-disable */ // Constructor name should start with uppercase, but in this case the constructor is a variable
-			const widget = new config.module(item.el, item.widgetConfig);
-			/* eslint-enable */
+			widgetsToInitialize.forEach(item => {
+				const articleId = item.widgetConfig.articleId || item.widgetConfig.articleid || null;
 
-			document.body.dispatchEvent(new CustomEvent(config.eventNamespace + '.ready', {
-				detail: {
-					id: item.id,
-					instance: widget
-				},
-				bubble: true
-			}));
+				if (counts[articleId] >= 0) {
+					item.widgetConfig.count = counts[articleId];
+				}
+
+				/* eslint-disable */ // Constructor name should start with uppercase, but in this case the constructor is a variable
+				const widget = new config.module(item.el, item.widgetConfig);
+				/* eslint-enable */
+
+				document.body.dispatchEvent(new CustomEvent(config.eventNamespace + '.ready', {
+					detail: {
+						id: item.id,
+						instance: widget
+					},
+					bubble: true
+				}));
+			});
 		});
-	});
+	}
 };
