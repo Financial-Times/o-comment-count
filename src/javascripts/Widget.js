@@ -45,15 +45,8 @@ const Widget = function (rootEl, config) {
 		}
 	}
 
-	let template = envConfig.get('template');
-	if (config.template) {
-		template = config.template;
-	}
-
-	let ariaLabelTemplate = envConfig.get('ariaLabelTemplate');
-	if (config.ariaLabelTemplate) {
-		ariaLabelTemplate = config.ariaLabelTemplate;
-	}
+	const template = config.template || envConfig.get('template');
+	const ariaLabelTemplate = config.ariaLabelTemplate || envConfig.get('ariaLabelTemplate');
 
 	if (config.count >= 0) {
 		commentCount = config.count;
