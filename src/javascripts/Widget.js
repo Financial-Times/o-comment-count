@@ -50,8 +50,17 @@ const Widget = function (rootEl, config) {
 		template = config.template;
 	}
 
+	let ariaLabelTemplate = envConfig.get('ariaLabelTemplate');
+	if (config.ariaLabelTemplate) {
+		ariaLabelTemplate = config.ariaLabelTemplate;
+	}
+
 	if (config.count >= 0) {
 		commentCount = config.count;
+	}
+
+	function replacePlaceholders (templateString, count) {
+		return templateString.replace('{count}', count).replace('{plural}', (count > 1 ? 's' : ''));
 	}
 
 	function render () {
@@ -64,7 +73,8 @@ const Widget = function (rootEl, config) {
 				widgetEl.style.visibility = 'hidden';
 			} else {
 				widgetEl.style.visibility = 'visible';
-				widgetEl.innerHTML = template.replace('{count}', count).replace('{plural}', (count > 1 ? 's' : ''));
+				widgetEl.innerHTML = replacePlaceholders(template, count);
+				widgetEl.setAttribute('aria-label', replacePlaceholders(ariaLabelTemplate, count));
 			}
 		});
 	}
