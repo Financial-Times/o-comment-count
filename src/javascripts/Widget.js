@@ -66,8 +66,13 @@ const Widget = function (rootEl, config) {
 				widgetEl.style.visibility = 'hidden';
 			} else {
 				widgetEl.style.visibility = 'visible';
-				widgetEl.innerHTML = replacePlaceholders(template, count);
-				widgetEl.setAttribute('aria-label', replacePlaceholders(ariaLabelTemplate, count));
+				if (template) {
+					widgetEl.innerHTML = replacePlaceholders(template, count);
+				}
+
+				if (ariaLabelTemplate) {
+					widgetEl.setAttribute('aria-label', replacePlaceholders(ariaLabelTemplate, count));
+				}
 			}
 		});
 	}
