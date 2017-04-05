@@ -72,6 +72,7 @@ const Widget = function (rootEl, config) {
 
 				if (ariaLabelTemplate) {
 					widgetEl.setAttribute('aria-label', replacePlaceholders(ariaLabelTemplate, count));
+					widgetEl.setAttribute('title', replacePlaceholders(ariaLabelTemplate, count));
 				}
 			}
 		});
