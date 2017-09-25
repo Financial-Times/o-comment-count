@@ -13,6 +13,21 @@ function getCamelCaseName (str) {
 	return result;
 }
 
+function getAttributeValue(valueRead) {
+	if (valueRead === "true") {
+		return true;
+	} else if (valueRead === "false") {
+		return false;
+	} else {
+		const intValue = parseInt(valueRead, 10);
+		if (!isNaN(valueRead) && intValue) {
+			return intValue;
+		} else {
+			return valueRead;
+		}
+	}
+}
+
 module.exports = function (config) {
 	let el = config.context;
 
@@ -51,22 +66,6 @@ module.exports = function (config) {
 			let itemsInConfig;
 			let currentLevel;
 			let camelCaseConfigName;
-
-
-			function getAttributeValue (valueRead) {
-				if (valueRead === "true") {
-					return true;
-				} else if (valueRead === "false") {
-					return false;
-				} else {
-					const intValue = parseInt(valueRead, 10);
-					if (!isNaN(valueRead) && intValue) {
-						return intValue;
-					} else {
-						return valueRead;
-					}
-				}
-			}
 
 			for (let j = 0; j < elItem.attributes.length; j++) {
 				match = elItem.attributes[j].name.match(new RegExp('data-' + config.classNamespace + '-config-(.*)'));
