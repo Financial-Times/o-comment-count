@@ -11,24 +11,28 @@
 	},
 	"demos": [
 		{
-			"path": "demos/main.html",
-			"expanded": true,
+			"name": "main",
+			"template": "demos/main.html",
 			"description": "Basic setup"
 		},
 		{
-			"path": "demos/custom_template.html",
-			"expanded": true,
+			"name": "custom_template",
+			"template": "demos/custom_template.html",
 			"description": "How to provide a custom template at an individual level"
 		},
 		{
-			"path": "demos/auto_refresh.html",
-			"expanded": true,
+			"name": "auto_refresh",
+			"template": "demos/auto_refresh.html",
 			"description": "Enable auto refresh: interval of 1 minute"
 		},
 		{
-			"path": "demos/defer_init.html",
-			"expanded": true,
+			"name": "defer_init",
+			"template": "demos/defer_init.html",
 			"description": "Initialize later"
 		}
-	]
+	],
+	"demosDefaults": {
+		"js": "demos/src/demo.js",
+		"data": "demos/src/data.json"
+	}
 }
