@@ -16,22 +16,22 @@
 	"demos": [
 		{
 			"name": "main",
-			"template": "demos/main.html",
+			"template": "demos/main/demo.mustache",
 			"description": "Basic setup"
 		},
 		{
 			"name": "custom_template",
-			"template": "demos/custom_template.html",
+			"template": "demos/custom_template/demo.mustache",
 			"description": "How to provide a custom template at an individual level"
 		},
 		{
 			"name": "auto_refresh",
-			"template": "demos/auto_refresh.html",
+			"template": "demos/auto_refresh/demo.mustache",
 			"description": "Enable auto refresh: interval of 1 minute"
 		},
 		{
 			"name": "defer_init",
-			"template": "demos/defer_init.html",
+			"template": "demos/defer_init/demo.mustache",
 			"description": "Initialize later"
 		}
 	],
