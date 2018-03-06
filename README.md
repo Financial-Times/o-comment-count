@@ -17,12 +17,12 @@ A small UI component for rendering the comment count of a given article.
  * <a href="#core">Core/enhanced experience</a>
 
 ## <div id="product"></div> Adding comment count to your product
-### <div id="decl"></div> Declaratively 
+### <div id="decl"></div> Declaratively
 Use the following markup to enable comments:
 
 ```html
-<div data-o-component="o-comment-count" 
-    data-o-comment-count-auto-init="true|false" 
+<div data-o-component="o-comment-count"
+    data-o-comment-count-auto-init="true|false"
     data-o-comment-count-config-article-id="{article-id}"
     data-o-comment-count-config-template="{count} Comment{plural}">
 
@@ -30,7 +30,7 @@ Use the following markup to enable comments:
 </div>
 ```
 
- 
+
  * `data-o-comment-count-config-article-id` a unique id for your content, ideally a UUID for FT content
  * `data-o-comment-count-auto-init="false"` a module which has this attribute with a `false` value will not be initialized on the `o.DOMContentLoaded` event. This allows you to defer component initialisation.
  * `data-o-comment-count-config-{key}` for any other configuration. `{key}` has the following rule: `--` means new object level, `-` means camel case. Example: `data-o-comment-count-config--data-format--absolute="value"` is transformed to: ```{"livefyre": {"dataFormat": {"absolute": "value"}}}```
@@ -48,7 +48,7 @@ oCommentCount.init();
 
 The init function may take an optional parameter: a context (this could be DOM element or a valid selector). The search would be performed only inside of this context element. If none is specified, it defaults to document.body.
 
-### <div id="imper"></div> Imperatively 
+### <div id="imper"></div> Imperatively
 Create an instance of the component with the parameters that are available:
 
 ```javascript
@@ -128,6 +128,23 @@ oCommentCount.setConfig({
 The API of o-comment-api is available by using `oCommentCount.dataService`.
 
 ## <div id="jsapi"></div> JavaScript API
+
+### Events
+
+#### oCommentCount.ready
+
+The `oCommentCount.ready` event is fired after the comment count is initalised and added to the DOM.
+
+The event has the following properties:
+- detail.id - Widget id _(deprecated)_
+- detail.instance - `Widget` instance.
+
+```javascript
+	document.body.addEventListener('oCommentCount.ready', function(e) {
+		console.log(e.detail.instance);
+	});
+```
+
 ### <div id="">methods</div> Methods
 ##### init
 Called automatically unless autoInit is set to false. Init will basically fetch the comment count and render the template. If it's called multiple times, it re-renders the widget each time with the latest available comment count.
@@ -148,7 +165,7 @@ This method disables logging of the module.
 This method sets the logging level. This could be a number from 0 to 4 (where 0 is debug, 4 is error), or a string from the available methods of 'console' (debug, log, info, warn, error).
 Default is 3 (warn).
 
-## <div id="browser"></div> Browser support 
+## <div id="browser"></div> Browser support
 Works in accordance with our [support policy](https://docs.google.com/a/ft.com/document/d/1dX92MPm9ZNY2jqFidWf_E6V4S6pLkydjcPmk5F989YI/edit)
 
 ## <div id="core"></div> Core/Enhanced Experience

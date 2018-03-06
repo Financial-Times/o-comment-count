@@ -121,7 +121,7 @@ module.exports = function (config) {
 
 				document.body.dispatchEvent(new CustomEvent(config.eventNamespace + '.ready', {
 					detail: {
-						id: item.id,
+						id: item.id, // @deprecated
 						instance: widget
 					},
 					bubble: true
