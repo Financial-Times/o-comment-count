@@ -1,4 +1,4 @@
-# o-comment-count [![Build Status](https://travis-ci.org/Financial-Times/o-comment-count.svg?branch=master)](https://travis-ci.org/Financial-Times/o-comment-count)
+# o-comment-count [![Build Status](https://travis-ci.org/Financial-Times/o-comment-count.svg?branch=master)](https://travis-ci.org/Financial-Times/o-comment-count) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
 A small UI component for rendering the comment count of a given article.
 
