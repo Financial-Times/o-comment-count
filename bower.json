@@ -3,10 +3,7 @@
   "main": [
     "main.js"
   ],
-  "dependencies": {
-    "o-comment-utilities": "^2.3.0",
-    "o-comment-api": "^2.4.0"
-  },
+  "dependencies": {},
   "ignore": [
     "node_modules",
     "tests",
