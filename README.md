@@ -1,5 +1,7 @@
 # o-comment-count [![Build Status](https://travis-ci.org/Financial-Times/o-comment-count.svg?branch=master)](https://travis-ci.org/Financial-Times/o-comment-count) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+📢 **This component has been deprecated. The comment count functionality has been moved into [`o-comments`](https://github.com/Financial-Times/o-comments). Please speak to the [Comments team](https://github.com/orgs/Financial-Times/teams/comments) if you have any questions.**
+
 A small UI component for rendering the comment count of a given article.
 
 ## Contents
